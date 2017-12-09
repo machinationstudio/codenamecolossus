@@ -94,7 +94,7 @@ void setup() {
   pinMode(2, OUTPUT);   //yellow LED
   pinMode(4, OUTPUT);   //yellow LED
   digitalWrite(0, HIGH);
-  digitalWrite(1, HIGH)
+  digitalWrite(1, HIGH);
   digitalWrite(2, HIGH);
   digitalWrite(4, HIGH);
   //note: Digital pin 3 is reserved for one more LED
@@ -252,7 +252,7 @@ void loop() {
   }
 
   if (millis() - controllerPreviousMillis > 500) {
-    controllerButton = 999;
+    controllerButton = 999; // assigned a number that will not be used
     isRepeatKey = false;
   }
 }
@@ -328,7 +328,7 @@ void walkForward() {
     servoLeft.write(108, 18, false);
   }
   else if (walkTimerDifference >= 2400 && walkTimerDifference < 3200) {
-    servoMiddle.write(105, 18, false); // 5 degrees added to offset weight difference between the sides
+    servoMiddle.write(100, 18, false);
   }
   else if (walkTimerDifference >= 3200) {
     walkTimer = millis();
@@ -350,7 +350,7 @@ void walkBackward() {
     servoLeft.write(72, 18, false);
   }
   else if (walkTimerDifference >= 2400 && walkTimerDifference < 3200) {
-    servoMiddle.write(105, 18, false); // 5 degrees added to offset weight difference between the sides
+    servoMiddle.write(100, 18, false);
   }
   else if (walkTimerDifference >= 3200) {
     walkTimer = millis();
@@ -372,7 +372,7 @@ void walkTurnLeft() {
     servoLeft.write(80, 18, false);
   }
   else if (walkTimerDifference >= 2400 && walkTimerDifference < 3200) {
-    servoMiddle.write(105, 18, false); // 5 degrees added to offset weight difference between the sides
+    servoMiddle.write(100, 18, false);
   }
   else if (walkTimerDifference >= 3200) {
     walkTimer = millis();
@@ -387,7 +387,7 @@ void walkTurnRight() {
     servoLeft.write(100, 18, false);
   }
   else if (walkTimerDifference >= 800 && walkTimerDifference < 1600) {
-    servoMiddle.write(105, 18, false); // 5 degrees added to offset weight difference between the sides
+    servoMiddle.write(100, 18, false);
   }
   else if (walkTimerDifference >= 1600 && walkTimerDifference < 2400) {
     servoRight.write(100, 18, false);
